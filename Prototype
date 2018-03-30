@@ -1,0 +1,21 @@
+
+function Person(name,age,Constructcall){
+
+    this.name=name;
+    this.age=age;
+
+    this.Constructcall=function Constructcall(){
+        console.log(age+' :객체의 age를 호출합니다');
+    }; /* 객체안에서추가 ㄱㄴ */
+}                                           
+
+Person.prototype.walk = function(speed){
+    console.log(speed+'km 속도로걷는다');
+}   /* 객체밖에서 추가시 prototype을 추가해야함 */
+
+var person01 = new Person('지영관',20);
+var person02 = new Person('강민구',20);
+
+console.log(person01.name+' 객체의 walk를 호출합니다');
+person01.walk(10);
+person01.Constructcall();
